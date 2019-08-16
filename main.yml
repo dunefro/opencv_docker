@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+    - docker_image:
+        dockerfile: Dockerfile
+        path: "."
+        name: dunefro/py36:v2
+        state: present 
+    - docker_container:
+        name: myopencv
+        image: 
+        state: started
+        restart: yes
+        devices:
+          - "/dev/video0:/dev/video0"
+        volumes:
+          - "/tmp/.X11-unix:/tmp/.X11-unix"
+       
