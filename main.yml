@@ -7,7 +7,7 @@
         state: present 
     - docker_container:
         name: myopencv
-        image: 
+        image: dunefro/py36:v2 
         state: started
         restart: yes
         devices:
